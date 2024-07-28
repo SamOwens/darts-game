@@ -1,19 +1,14 @@
 import PropTypes from 'prop-types';
 
-const Button = ({ text, type }) => {
-  const buttonStyle = {
-    primary: 'bg-white rounded p-2 w-full',
-    disabled: 'bg-white rounded p-2 w-full opacity-40',
-  };
-
-  const handleClick = (e) => {
-    console.log(e);
-  };
+const Button = ({ text, isActive, onClick }) => {
+  const buttonStyle = isActive
+    ? 'border-2 border-green-500 bg-green-500 text-black rounded p-2 w-full'
+    : 'border-2 border-green-600 text-green-600 rounded p-2 w-full';
 
   return (
     <button
-      className={buttonStyle[type]}
-      onClick={handleClick}
+      onClick={onClick}
+      className={buttonStyle}
     >
       {text}
     </button>
@@ -22,7 +17,6 @@ const Button = ({ text, type }) => {
 
 Button.propTypes = {
   text: PropTypes.string.isRequired,
-  type: PropTypes.oneOf(['primary', 'disabled']).isRequired,
   isActive: PropTypes.bool.isRequired,
   onClick: PropTypes.func.isRequired,
 };

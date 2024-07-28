@@ -1,26 +1,26 @@
+import PropTypes from 'prop-types';
 import DifficultySelect from '../components/DifficultySelect';
 import RoundsSelect from '../components/RoundsSelect';
 import Button from '../components/Button';
 
-import { PropTypes } from 'prop-types';
-
-const NewGame = ({ visible }) => {
+const NewGame = ({ setDifficulty, setRounds, startGame }) => {
   return (
-    <div className={visible ? '' : 'hidden'}>
-      <div className="flex flex-col items-center justify-center h-screen w-screen p-4">
-        <DifficultySelect></DifficultySelect>
-        <RoundsSelect></RoundsSelect>
-        <Button
-          text="Start Game"
-          type="primary"
-        ></Button>
-      </div>
+    <div className="flex flex-col items-center justify-center h-screen w-screen p-4">
+      <DifficultySelect setDifficulty={setDifficulty} />
+      <RoundsSelect setRounds={setRounds} />
+      <Button
+        text="Start Game"
+        isActive={true}
+        onClick={startGame}
+      />
     </div>
   );
 };
 
-export default NewGame;
-
 NewGame.propTypes = {
-  visible: PropTypes.bool.isRequired,
+  setDifficulty: PropTypes.func.isRequired,
+  setRounds: PropTypes.func.isRequired,
+  startGame: PropTypes.func.isRequired,
 };
+
+export default NewGame;
