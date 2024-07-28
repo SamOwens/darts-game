@@ -19,8 +19,8 @@ const DifficultySelect = ({ setDifficulty }) => {
 
   return (
     <>
-      <h1 className="text-center text-white p-2 text-xl">Difficulty Select</h1>
-      <div className="flex justify-between w-full gap-2 mb-4">
+      <h1 className="text-center text-white p-2 mb-2 text-xl">Target Select</h1>
+      <div className="flex justify-between w-full gap-2 mb-6">
         {buttons.map((button) => (
           <Button
             key={button.id}

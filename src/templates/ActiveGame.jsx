@@ -69,7 +69,7 @@ const ActiveGame = ({
   return (
     <div className="flex flex-col items-center justify-center p-8 m-4 md:w-1/2 w-full bg-gray-900 rounded-xl">
       <h1 className="text-white font-semibold mb-6">
-        Round {currentRound} / {rounds} - {difficulty}
+        Round {currentRound} / {rounds} - {difficulty} - 3 Darts
       </h1>
       <p className="text-7xl text-white mb-10 block">{currentValue}</p>
       <div className="flex gap-4 w-full mb-4">
