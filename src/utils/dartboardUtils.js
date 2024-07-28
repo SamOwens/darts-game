@@ -8,7 +8,7 @@ export const getDartboardValues = (difficulty) => {
     allValues.push(...doubles);
   }
   if (difficulty === 'Hard') {
-    allValues.push(...trebles, '25', 'bull');
+    allValues.push(...trebles, '25', 'Bullseye');
   }
 
   return allValues;
