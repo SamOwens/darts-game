@@ -92,7 +92,7 @@ const ActiveGame = ({
           className="bg-green-500"
         />
         <Button
-          text="No Hits"
+          text="Miss"
           isActive={true}
           onClick={handleMiss}
           className="bg-red-500"
