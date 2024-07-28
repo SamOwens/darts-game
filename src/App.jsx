@@ -29,7 +29,7 @@ function App() {
   };
 
   return (
-    <div className="flex h-screen w-screen items-center justify-center">
+    <div className="flex h-dvh w-dvw items-center justify-center">
       {gameState === 'new' && (
         <NewGame
           setDifficulty={setDifficulty}
