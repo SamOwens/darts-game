@@ -5,7 +5,7 @@ import FinishedGame from './templates/FinishedGame';
 
 function App() {
   const [gameState, setGameState] = useState('new');
-  const [difficulty, setDifficulty] = useState('Easy');
+  const [difficulty, setDifficulty] = useState('Singles');
   const [rounds, setRounds] = useState(1);
   const [results, setResults] = useState({ hits: 0, attempts: 0 });
 

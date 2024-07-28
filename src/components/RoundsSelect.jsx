@@ -1,8 +1,17 @@
+import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 const RoundsSelect = ({ setRounds }) => {
+  const [rounds, setLocalRounds] = useState(20);
+
+  useEffect(() => {
+    setRounds(20);
+  }, [setRounds]);
+
   const handleRoundsChange = (e) => {
-    setRounds(parseInt(e.target.value, 10));
+    const value = parseInt(e.target.value, 10);
+    setLocalRounds(value);
+    setRounds(value);
   };
 
   return (
@@ -14,8 +23,10 @@ const RoundsSelect = ({ setRounds }) => {
         type="number"
         id="rounds"
         name="rounds"
+        value={rounds}
         onChange={handleRoundsChange}
         className="p-2 w-full text-center rounded"
+        inputMode="numeric"
       />
     </div>
   );
