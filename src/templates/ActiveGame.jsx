@@ -74,19 +74,19 @@ const ActiveGame = ({
       <p className="text-7xl text-white mb-10 block">{currentValue}</p>
       <div className="flex gap-4 w-full mb-4">
         <Button
-          text="x1"
+          text="1 Hit"
           isActive={true}
           onClick={() => handleHit(1)}
           className="bg-green-700"
         />
         <Button
-          text="x2"
+          text="2 Hits"
           isActive={true}
           onClick={() => handleHit(2)}
           className="bg-green-600"
         />
         <Button
-          text="x3"
+          text="3 Hits"
           isActive={true}
           onClick={() => handleHit(3)}
           className="bg-green-500"

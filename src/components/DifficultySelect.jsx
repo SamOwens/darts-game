@@ -9,6 +9,7 @@ const DifficultySelect = ({ setDifficulty }) => {
     { id: 1, text: 'Singles' },
     { id: 2, text: 'Doubles' },
     { id: 3, text: 'Trebles' },
+    { id: 4, text: 'Mixed' },
   ];
 
   const handleClick = (id, text) => {
