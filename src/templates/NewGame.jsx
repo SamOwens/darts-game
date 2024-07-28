@@ -5,7 +5,7 @@ import Button from '../components/Button';
 
 const NewGame = ({ setDifficulty, setRounds, startGame }) => {
   return (
-    <div className="flex flex-col items-center justify-center h-screen w-screen p-4">
+    <div className="flex flex-col items-center justify-center p-8 m-4 md:w-1/2 w-full bg-gray-900 rounded-xl">
       <DifficultySelect setDifficulty={setDifficulty} />
       <RoundsSelect setRounds={setRounds} />
       <Button

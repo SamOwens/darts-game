@@ -7,7 +7,9 @@ const RoundsSelect = ({ setRounds }) => {
 
   return (
     <div className="mb-4 w-full">
-      <h1 className="block mb-2 text-center text-white">Select Rounds</h1>
+      <h1 className="block mb-2 text-center text-white text-xl">
+        Select Rounds
+      </h1>
       <input
         type="number"
         id="rounds"

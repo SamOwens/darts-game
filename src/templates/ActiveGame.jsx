@@ -3,7 +3,13 @@ import PropTypes from 'prop-types';
 import { getDartboardValues } from '../utils/dartboardUtils';
 import Button from '../components/Button';
 
-const ActiveGame = ({ difficulty, rounds, endGame, setResults }) => {
+const ActiveGame = ({
+  difficulty,
+  rounds,
+  endGame,
+  setResults,
+  leaveEarly,
+}) => {
   const [currentRound, setCurrentRound] = useState(1);
   const [dartboardValues, setDartboardValues] = useState([]);
   const [currentValue, setCurrentValue] = useState('');
@@ -55,39 +61,63 @@ const ActiveGame = ({ difficulty, rounds, endGame, setResults }) => {
     }
   };
 
+  const finishEarly = () => {
+    setResults({ hits, attempts });
+    endGame({ hits, attempts });
+  };
+
   return (
-    <div className="flex flex-col items-center justify-center h-screen w-screen p-6">
+    <div className="flex flex-col items-center justify-center p-8 m-4 md:w-1/2 w-full bg-gray-900 rounded-xl">
       <h1 className="text-white font-semibold mb-6">
-        Round {currentRound} / {rounds}
+        Round {currentRound} / {rounds} - {difficulty}
       </h1>
-      <p className="text-7xl text-green-500 mb-10 block">{currentValue}</p>
+      <p className="text-7xl text-white mb-10 block">{currentValue}</p>
       <div className="flex gap-4 w-full mb-4">
         <Button
           text="x1"
           isActive={true}
           onClick={() => handleHit(1)}
+          className="bg-green-700"
         />
         <Button
           text="x2"
           isActive={true}
           onClick={() => handleHit(2)}
+          className="bg-green-600"
         />
         <Button
           text="x3"
           isActive={true}
           onClick={() => handleHit(3)}
+          className="bg-green-500"
         />
         <Button
           text="Miss"
           isActive={true}
           onClick={handleMiss}
+          className="bg-red-500"
         />
       </div>
       <Button
         text="Back"
         isActive={true}
         onClick={handleBack}
+        className="bg-gray-500 mb-12"
       />
+      <div className="flex gap-4 w-full">
+        <Button
+          text="New Game"
+          isActive={true}
+          onClick={leaveEarly}
+          className="bg-gray-500"
+        />
+        <Button
+          text="End Game"
+          isActive={true}
+          onClick={finishEarly}
+          className="bg-gray-500"
+        />
+      </div>
     </div>
   );
 };
@@ -97,6 +127,7 @@ ActiveGame.propTypes = {
   rounds: PropTypes.number.isRequired,
   endGame: PropTypes.func.isRequired,
   setResults: PropTypes.func.isRequired,
+  leaveEarly: PropTypes.func.isRequired,
 };
 
 export default ActiveGame;

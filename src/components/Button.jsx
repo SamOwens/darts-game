@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 
-const Button = ({ text, isActive, onClick }) => {
+const Button = ({ text, isActive, onClick, className }) => {
   const buttonStyle = isActive
-    ? 'border-2 border-green-500 bg-green-500 text-black rounded p-2 w-full'
-    : 'border-2 border-green-600 text-green-600 rounded p-2 w-full';
+    ? `bg-blue-500 text-white rounded py-4 px-2 w-full ${className}`
+    : `bg-gray-500 text-white rounded py-4 px-2 w-full opacity-40 ${className}`;
 
   return (
     <button
@@ -19,6 +19,11 @@ Button.propTypes = {
   text: PropTypes.string.isRequired,
   isActive: PropTypes.bool.isRequired,
   onClick: PropTypes.func.isRequired,
+  className: PropTypes.string,
+};
+
+Button.defaultProps = {
+  className: '',
 };
 
 export default Button;

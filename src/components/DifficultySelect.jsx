@@ -6,9 +6,9 @@ const DifficultySelect = ({ setDifficulty }) => {
   const [activeButton, setActiveButton] = useState(1);
 
   const buttons = [
-    { id: 1, text: 'Easy' },
-    { id: 2, text: 'Intermediate' },
-    { id: 3, text: 'Hard' },
+    { id: 1, text: 'Singles' },
+    { id: 2, text: 'Doubles' },
+    { id: 3, text: 'Trebles' },
   ];
 
   const handleClick = (id, text) => {
@@ -18,7 +18,7 @@ const DifficultySelect = ({ setDifficulty }) => {
 
   return (
     <>
-      <h1 className="text-center text-white p-2">Difficulty Select</h1>
+      <h1 className="text-center text-white p-2 text-xl">Difficulty Select</h1>
       <div className="flex justify-between w-full gap-2 mb-4">
         {buttons.map((button) => (
           <Button
